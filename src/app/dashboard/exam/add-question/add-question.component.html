@@ -1,0 +1,67 @@
+
+ <div class="card mt-5" style="width: 50rem;">
+ <form [formGroup]="reactform" >
+  <div *ngIf="type=='MCQ'">
+      <div class="form-group ml-3 mr-3">
+        <label for="question" >Enter Question</label>
+        <textarea type="text" formControlName="question"
+            [ngClass]="{'is-invalid':submitted && reactform.controls['question'].errors}"
+          class="form-control"></textarea>
+      </div>
+
+
+      <br>  
+  </div>
+  <div *ngIf="type=='VERBAL'">
+    <div class="form-group ml-3 mr-3">
+      <label for="question" >Enter Question</label>
+      <input type="text" [(ngModel)]="question" formControlName="question">
+    </div>
+  </div>
+  <button *ngIf="type=='MCQ'" class="btn btn-primary ml-3" (click)="addnewrow($event)">Add new option</button><br><br>
+     <div  class="ml-3" formArrayName="options">
+      <div *ngFor="let item of addOptionRow.controls;let i=index" [formGroupName]="i">
+        <tr>
+        <input class="form-control" formControlName="optionvalue" type="text">
+        <span *ngIf="item.get('optionvalue')?.errors && item.get('optionvalue')?.hasError('required')">* required</span>
+          <td><button class="btn btn-secondary ml-3" (click)="Removeitem(i)">(-)</button></td>
+        </tr>
+      </div>
+
+     </div>
+
+    <br>
+
+
+
+
+  <button *ngIf="type=='MCQ'" class="btn btn-primary ml-3" (click)="addanswer()" id="addAns">ADD ANSWER</button>
+  <div>
+  <ul>
+    <li *ngFor="let data of array" >
+      <input #inputEl class="form-check-input" (change)="onChange(data['optionvalue'], inputEl?.checked)"  type="checkbox" >
+    <label class="form-check-label" for="{{data['optionvalue']}}">
+        {{data['optionvalue']}}
+    </label>
+    </li>
+  </ul>
+</div>
+<br>
+
+<div class=" ml-3 mr-3">
+  <label for="question" >Marks: </label>
+  <input type="text" formControlName="Marks"
+      [ngClass]="{'is-invalid':submitted && reactform.controls['Marks'].errors}">
+ </div>
+
+<div class="d-flex justify-content-center">
+  <button *ngIf="type=='MCQ'" class="btn btn-primary text-center mb-3" id="submit"  disabled (click)="procedsave()">Submit</button>
+  <button *ngIf="type=='VERBAL'" class="btn btn-primary text-center mb-3" id="submit"  (click)="addVerbalquestion()">Submit</button>
+  <button class="btn btn-light text-center mb-3 ml-3"
+ (click)="gotoexamdetail()">Back</button>
+</div>
+
+
+</form>
+</div>
+

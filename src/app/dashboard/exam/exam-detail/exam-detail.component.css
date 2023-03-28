@@ -1,0 +1,12 @@
+.title{
+background-color:#4169E1 ;
+color: white;
+height: 180px;
+}
+.card-title{
+    padding-left: 10px;
+    padding-top: 5px;
+}
+.btn-update{
+    background-color: #87CEEB;
+}

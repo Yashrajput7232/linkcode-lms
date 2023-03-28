@@ -1,0 +1,71 @@
+<div style="width: 500px;">
+<div class="card mt-5 mb-5 " style="width: 60rem;">
+  <div class="card-header" style="background-color: #4169E1;color: white;" >
+    <div class="card-title" style="width: 120rem;"><b>Course Name &nbsp;:</b>  {{questions?.['_id']}}</div>
+    <div class="card-title" style="width: 120rem;"><b>Topic Name &nbsp;&nbsp; :</b> {{questions?.['name']}}</div>
+    <div class="card-title" style="width: 120rem;"><b>Exam  Type &nbsp;&nbsp;&nbsp;&nbsp; :</b> {{questions?.['type']}}</div>
+    <div class="card-title" style="width: 120rem; "><b> Start Date &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b> {{questions?.['startDate'].slice(0,9)}}</div>
+    <br /><br />
+  </div>
+
+  <div class="ml-3" *ngFor="let question of questionarray; index as i">
+    <div class="card ml-3 mr-3 mb-3 mt-3">
+      <div class="card-body">
+        <div style="font-weight: bold; text-align: right">
+          Marks: {{question?.['mark']}}
+        </div>
+        <div class="ml-3" style="font-weight: bold">
+          {{ i + 1 }}. {{question?.['name']}}
+        </div>
+
+        <div class="container" *ngIf="type == 'MCQ'">
+          <div
+            class="card-title ml-5"
+            *ngFor="let options of question?.['options'];index as i"
+          >
+            <div *ngIf="question['answerType'] == 'radio'">
+              <input
+                #inputEl
+                class="form-check-input"
+                (change)="onChange(questions?.['_id'],question?.['id'],options,inputEl?.checked,'radio')"
+                type="radio"
+                id="options{{ i }}"
+                name="{{question?.['id']}}"
+              />
+              <label class="form-check-label">{{ options }}</label>
+            </div>
+
+            <div *ngIf="question['answerType'] == 'checkbox'">
+              <input
+                #inputEl
+                class="form-check-input"
+                (change)="onChange(questions?.['_id'],question['id'],options,inputEl?.checked,'checkbox')"
+                type="checkbox"
+              />
+              <label class="form-check-label" for="flexCheckDefault">
+                {{ options }}
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf="type=='VERBAL'"class="container">
+          
+        </div>
+
+        <br />
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center">
+    <button
+      class="btn btn-primary ml-3 mb-3"
+      (click)="submitExam(questions?.['_id'])"
+    >
+      SUBMIT EXAM
+    </button>
+  </div>
+</div>
+</div>
+

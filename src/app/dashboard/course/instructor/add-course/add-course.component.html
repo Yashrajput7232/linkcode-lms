@@ -1,0 +1,75 @@
+<div class="course-form">
+  <h2>Add new Course</h2>
+  <form [formGroup]="courseForm" (ngSubmit)="addCourse()">
+
+    <div class="form-group">
+      <label>Title</label>
+      <input
+        type="text"
+        placeholder="Course name"
+        formControlName="name"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && formControls['name'].errors }"
+      />
+      <div *ngIf="submitted && formControls['name'].errors" class="invalid-feedback">
+        <div *ngIf="formControls['name'].errors['required']">Name is required</div>
+
+      </div>
+
+    </div>
+
+    <div class="form-group">
+      <label>Category</label>
+      <input
+        type="text"
+        placeholder="Course category"
+        formControlName="category"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && formControls['category'].errors }"
+      />
+      <div *ngIf="submitted && formControls['category'].errors" class="invalid-feedback">
+        <div *ngIf="formControls['category'].errors['required']">Category is required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Price</label>
+      <input
+        type="text"
+        placeholder="Course price"
+        formControlName="price"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && formControls['name'].errors }"
+      />
+      <div *ngIf="submitted && formControls['price'].errors" class="invalid-feedback">
+        <div *ngIf="formControls['price'].errors['required']">Price is required</div>
+
+      </div>
+
+    </div>
+
+    <div class="form-group">
+      <label>Description</label>
+      <input
+        type="text"
+        placeholder="Course description"
+        formControlName="description"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && formControls['description'].errors }"
+      />
+      <div *ngIf="submitted && formControls['description'].errors" class="invalid-feedback">
+        <div *ngIf="formControls['description'].errors['required']">Description is required</div>
+
+      </div>
+
+    </div>
+
+    <div class="form-group text-center">
+      <button type="submit" class="btn btn-primary">Add</button>
+    </div>
+
+  </form>
+
+</div>
+
+

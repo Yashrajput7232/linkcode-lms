@@ -1,0 +1,79 @@
+<div class="card mt-5 mb-5" style="width: 40rem;">
+  <div class="card-body"  >
+    <div class="title">
+    <h5 class="card-title" style="width: 120rem;">Course Name &nbsp; :&nbsp; {{course?.['course']?.['category']}}</h5>
+    <h5 class="card-title"style="width: 120rem;">Topic Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  :&nbsp; {{course?.['name']}}</h5>
+    <h5 class="card-title"style="width: 120rem;">Exam Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp; {{course?.['type']}}</h5>
+    <h5 class="card-title"style="width: 120rem;">Start Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp; {{course?.['startDate'].slice(0,9)}}</h5>
+    </div>
+    <div style="background-image: linear-gradient(to right, black, black); height:1px;"></div><br>
+    <a *ngIf="getExamType()=='MCQ'" class="btn btn-primary float-right" (click)="gotoMCQquestion()">Add question</a> <br>
+    <a *ngIf="getExamType()=='CODING'" class="btn btn-primary float-right" (click)="gotoCODINGquestion()">Add question</a><br>
+    <a *ngIf="getExamType()=='VERBAL'" class="btn btn-primary float-right" (click)="gotoVERBALquestion()">Add question</a><br>
+     <h5>Question list</h5>
+
+     <div  class="card" *ngIf="getExamType()=='MCQ'">
+      <div *ngFor="let question of questionarray">
+      <div class="card-header" >
+
+        <div class="card-title"><b>Question</b>  : {{question?.['name']}}</div>
+        <div class="card-subtitle"><b> Options&nbsp;&nbsp;&nbsp; :</b> {{question?.['options']}}</div>
+         <div class="card-subtitle"><b>Answers&nbsp;&nbsp; :</b> {{question?.['answers']}}</div>
+         <div class="card-subtitle"><b>Marks&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :</b> {{question?.['mark']}}</div>
+      </div><br>
+      <div class="card-action">
+        <div class="btn-toolbar">
+
+        <button (click)="gotoUpdateQuestion(question?.['_id'])" class="btn btn-update ml-3"><b> Update</b></button>
+        <button  class="btn btn-danger ml-3" (click)="deleteQuestion(question?.['_id'])">Delete</button>
+      </div>
+     </div>
+      <br>
+    </div>
+  </div>
+
+
+  <div  class="card" *ngIf='getExamType()=="CODING"'>
+    <div *ngFor="let question of codingquestionarray">
+      <div class="card-header" >
+
+        <div class="card-title">question  : {{question?.['question']}}</div>
+        <div class="card-subtitle">Description : {{question?.['description']}}</div>
+        <div class="card-subtitle">Editable Answer : {{question?.['editable']}}</div>
+         <div class="card-subtitle">No of test cases : {{question?.['numberOfTestCases']}}</div>
+         <div class="card-subtitle">Marks : {{question?.['marks']}}</div>
+      </div><br>
+      <div class="card-action">
+        <div class="btn-toolbar">
+
+        <button (click)="gotoUpdateQuestion(question?.['_id'])" class="btn btn-update ml-3"><b> Update</b></button>
+        <button  class="btn btn-danger ml-3" (click)="deleteQuestion(question?.['_id'])">Delete</button>
+      </div>
+     </div>
+      <br>
+    </div>
+  </div>
+  <div  class="card" *ngIf="getExamType()=='VERBAL'">
+    <div *ngFor="let question of questions">
+    <div class="card-header" >
+
+      <div class="card-title">question  : {{question?.['name']}}</div>
+       <!-- <div class="card-subtitle">Marks : {{question?.['mark']}}</div> -->
+    </div><br>
+    <div class="card-action">
+      <div class="btn-toolbar">
+
+      <button (click)="gotoUpdateQuestion(question?.['_id'])" class="btn btn-update ml-3"><b> Update</b></button>
+      <button  class="btn btn-danger ml-3" (click)="deleteQuestion(question?.['_id'])">Delete</button>
+    </div>
+   </div>
+    <br>
+  </div>
+</div>
+
+<br>
+  <button  class="btn btn-primary ml-3" routerLink='/dashboard/exam/'>BACK</button>
+</div>
+
+
+

@@ -1,0 +1,52 @@
+
+<div>
+
+
+  <div class="split left" >
+  <div class="split left">
+    QUESTION:{{examdetail?.['question']}}
+    <br><br>
+    Description:{{examdetail?.['description']}}
+  </div>
+  </div>
+
+  <div class="split right">
+
+
+    <div>
+        <label for="question" >Enter Code</label>
+        <textarea
+          [(ngModel)]="examdetail.editable"
+          class="input-coding form-control"
+           spellcheck="false"
+            type="text" ></textarea>
+    </div>
+
+
+  <div  class="text-right mr-3">
+    <button (click)="submit()" >SUBMIT</button>
+    <br><br>
+
+  </div>
+
+  <div>
+
+    <div *ngFor="let result of resultArray; let index = index">
+      <div *ngIf="result==1">
+        <button type="button" class="btn btn-success btn-block ml-5 mb-2 mr-3">Test Case {{index+1}} Passed</button>
+      </div>
+      <div *ngIf="result!=1">
+        <button type="button" class="btn btn-danger btn-block ml-5 mb-2 mr-3">Test Case {{index+1}} Failed</button>
+      </div>
+    </div>
+  </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+

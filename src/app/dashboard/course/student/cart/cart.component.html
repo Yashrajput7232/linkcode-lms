@@ -1,0 +1,71 @@
+
+
+
+<h3>Cart</h3>
+
+
+<h5 *ngIf="courses.length==0" style="display: flex; justify-content: center;">Empty cart</h5>
+<div class="py-5">
+  <div class="container">
+    <div class="row hidden-md-up">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="card mb-3" *ngFor="let course of courses">
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                <div class="d-flex flex-row align-items-center">
+                  <div>
+                    <img
+                      src="https://mdbcdn.b-cdn.net/img/new/standard/nature/111.webp"
+                      class="img-fluid rounded-3" alt="Shopping item" style="width: 65px;">
+                  </div>
+                  <div class="ms-3">
+                    <h5>{{course['courseId']['name']}}</h5>
+                    <p class="small mb-0">{{course['courseId']['category']}}</p>
+                  </div>
+                </div>
+                <div class="d-flex flex-row align-items-center">
+                  <div style="width: 80px;">
+                    <h5 class="mb-0">Rs.{{course['price']}}</h5>
+                  </div>
+                  <button (click)="removeItem(course['courseId']['_id'])" style="color: #cecece;" class="btn btn-primary">Delete</button>
+                  <!-- <a (click)="removeItem(course['courseId']['_id'])" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card bg-primary text-white rounded-3">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center mb-4">
+                <h5 class="mb-0">Cart Details</h5>
+              </div>
+
+              <hr class="my-4">
+
+              <div class="d-flex justify-content-between mb-4">
+                <p class="mb-2">Total</p>
+                <p class="mb-2">{{total}}</p>
+              </div>
+
+              <button type="button" class="btn btn-info btn-block btn-lg">
+                <div class="d-flex justify-content-between">
+                  <span>{{total}}</span>
+                  <span>Checkout <i class="fas fa-long-arrow-alt-right ms-2"></i></span>
+                </div>
+              </button>
+
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+

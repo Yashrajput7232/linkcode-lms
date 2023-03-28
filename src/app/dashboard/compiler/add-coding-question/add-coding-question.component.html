@@ -1,0 +1,42 @@
+<form class="card mt-5"  style="width: 60rem; border-color: black;" [formGroup]="addquestionform" (ngSubmit)="onSubmit()">
+  <br>
+    <div>
+      <h5 >Enter Question</h5>
+    <textarea rows="3" cols="120" class="ml-3" formControlName="question">Question</textarea>
+    <span style="color:red" *ngIf="question &&question.invalid">Input question is invalid</span>
+    </div><br>
+
+  <div>
+    <h5 >Enter Question Description</h5>
+    <textarea rows="3" cols="120" class="ml-3" formControlName="qest_description">Question</textarea><br>
+    <span style="color:red" *ngIf="questiondescription &&questiondescription.invalid">
+      Input question description is invalid</span>
+  </div><br>
+
+  <div>
+    <h5 >Enter Editable answer</h5>
+    <textarea rows="3" cols="120" rows="6"class="ml-3" formControlName="editable_ans">Question</textarea><br>
+    <span style="color:red" *ngIf="editable_ans &&editable_ans.invalid">Input answer format is invalid</span>
+  </div><br>
+
+  <div>
+    <h5 >Enter Non editable answer</h5>
+    <textarea rows="3" cols="120" rows="6"class="ml-3" formControlName="non_editable_ans">Question</textarea><br>
+    <span style="color:red" *ngIf="non_editable_ans &&non_editable_ans.invalid">Input answer format is invalid</span>
+  </div><br>
+
+  <div>
+    <h5 >Enter no of test cases<input class="ml-3" formControlName="test_case"></h5>
+    <span style="color:red" *ngIf="testcase &&testcase.invalid">Test case is invalid</span>
+  </div><br>
+
+  <div>
+    <h5 >Enter Marks<input class="ml-3" formControlName="marks"></h5>
+    <span style="color:red" *ngIf="marks &&marks.invalid">Input marks is invalid</span>
+  </div><br>
+
+  <div  class="text-center mb-3">
+    <button class="btn btn-primary" >Submit</button>
+
+  </div>
+</form>

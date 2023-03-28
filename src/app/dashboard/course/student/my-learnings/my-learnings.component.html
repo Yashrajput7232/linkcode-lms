@@ -1,0 +1,24 @@
+<div class="py-5">
+  <div class="container">
+    <div class="row hidden-md-up">
+      <div class="col-md-4" *ngFor="let course of Courses">
+        <div class="card">
+          <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+            <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/111.webp" class="img-fluid"/>
+            <a href="#!">
+              <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+            </a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{course['name']}}</h5>
+            <p class="card-text">{{course['category']}}</p>
+            <button [routerLink]="['../', course['_id']]" class="btn btn-info">View</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+

@@ -1,0 +1,34 @@
+<div class="py-5">
+  <div class="container">
+    <div class="row hidden-md-up">
+      <div class="col-md-4" *ngFor="let course of courses">
+        <div class="card">
+          <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+            <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/111.webp" class="img-fluid"/>
+            <a href="#!">
+              <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+            </a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{course['name']}}</h5>
+            <p class="card-text">{{course['category']}}</p>
+            <button [routerLink]="course['_id']" class="btn btn-info">View</button>
+            <button *ngIf="getRole()=='STUDENT' && !checkAccessibility(course['_id'])"  class="btn btn-outline-success" (click)="addToCart(course['_id'])">Add to Cart</button>
+            <button style="width: fit-content;" *ngIf="userId==course['instructor']" [routerLink]="course['_id'] + '/update'" class="btn btn-secondary">Update</button>
+            <button style="width: fit-content;" *ngIf="userId==course['instructor']" class="btn btn-danger" (click)="openModal(template)">Delete</button>
+          </div>
+          <ng-template #template>
+            <div class="modal-body text-center">
+              <p>Are you sure you want to delete this course ?</p>
+              <button type="button" class="btn btn-default" (click)="deleteCourse(course['_id'])" >Yes</button>
+              <button type="button" class="btn btn-primary" (click)="cancel()" >No</button>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+

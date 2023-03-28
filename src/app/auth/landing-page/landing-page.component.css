@@ -1,0 +1,73 @@
+.h1-color{
+  color: #2980b9;
+}
+
+.navbar div ul li a:hover{
+  color: #2980b9;
+}
+
+.card-img{
+  width: 100px;
+  height: 70px;
+}
+
+footer{
+  color: white;
+}
+
+footer a{
+  color: white;
+}
+
+footer ul li a{
+  text-align: center;
+}
+
+
+/* slider */
+.tests{
+  padding: 20px 0;
+}
+
+.slider-wrap{
+  position: relative;
+  overflow: hidden;
+  height: 210px;
+}
+
+.slider-main{
+  /* position: absolute; */
+  width: 200%;
+}
+
+.item{
+  display: inline-block;
+  width: 350px;
+
+  background-color: rebeccapurple;
+  position: relative;
+  margin: 0 12px;
+}
+
+.text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: wheat;
+  font-size: 24px;
+}
+
+.prev{
+  position: absolute;
+  left: 33px;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.next{
+  position: absolute;
+  right: -25px;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}

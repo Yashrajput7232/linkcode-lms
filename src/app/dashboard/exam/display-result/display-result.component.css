@@ -1,0 +1,14 @@
+.my-card {
+  width: 800px;
+  height: 400px;
+  margin-top: 40px;
+  background-color: #4169E1;
+  color: white;
+
+}
+.card-title{
+  text-align: center;
+}
+.card-text{
+  margin-left: 100px;
+}

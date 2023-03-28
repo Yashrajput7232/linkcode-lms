@@ -1,0 +1,57 @@
+<button *ngIf="userId==instructorId" [routerLink]="'../'+courseId+ '/add'" class="btn btn-secondary">Add new lecture</button>
+    <!-- {{currentLectureVideoUrl}} -->
+    <div class="card-action">
+      <button *ngIf="userId==instructorId"  class="btn btn-secondary" [routerLink]="courseId+ lectureId + '/update'" >Update</button>
+      <button *ngIf="userId==instructorId"   class="btn btn-danger" >Delete</button>
+    </div>
+
+  <!-- </div> -->
+  <div class="card">
+  <div class="container-fluid">
+    <div class="row">
+        <div class="box1 col-lg-8 col-md-8 col-sm-11">
+          <h2> {{currentTitle}} </h2>
+          <div class="card-title"></div>
+            <div class="iframe-container">
+              <video height="700" width="500" class="responsive-iframe" preload="auto" controls controlsList="nodownload" controls src="{{currentLectureVideoUrl}}" frameborder="0"></video>
+                <!-- <iframe class="responsive-iframe" src="https://www.youtube.com/embed/JSDuy7v73wI" title="YouTube video player" frameborder="0"></iframe> -->
+            </div>
+
+            <div class="tab-content" id="myTabContent" >
+              <h2>Content related Lecture</h2>
+                <div class="tab-pane fade show active" id="Q&A" role="tabpanel" aria-labelledby="home-tab">
+                    <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+                </div>
+                <div class="tab-pane fade" id="Resources" role="tabpanel" aria-labelledby="profile-tab">
+                    <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
+                </div>
+                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                    <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="box2 col-lg-4 col-md-4 col-sm-1" style="overflow:scroll; height:100vh;">
+            <ul class="video-table">
+                <li class="video-lessons"><h5>Course Content</h5></li>
+                <li class="video-lessons" *ngFor="let lecture of lectures; let i = index">
+                  <form (ngSubmit)="setCurrentLectureVideoUrl(lecture.videoUrl,lecture.title)">
+                    <div *ngIf="getRole()=='STUDENT' && checkAccessibility() || i==0 || i==1 || i==2">
+                      <button style="background-color: white; border: none;" type="submit">{{lecture.title}}</button>
+                    </div>
+                    <div *ngIf="getRole()=='STUDENT' && !checkAccessibility() && i!=0 && i!=1 && i!=2">
+                      <button title="Please Purchase course for access" disabled style="background-color: white; border: none;" type="submit">{{lecture.title}}</button>
+                    </div>
+                    <div *ngIf="getRole()=='SUPERADMIN' || getRole()=='ADMIN' || getRole()=='INSTRUCTOR'">
+                      <button style="background-color: white; border: none;" type="submit">{{lecture.title}}</button>
+                    </div>
+                  </form>
+                </li>
+             </ul>
+        </div>
+
+    </div>
+
+</div>
+</div>

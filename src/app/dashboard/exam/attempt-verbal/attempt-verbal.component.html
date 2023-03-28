@@ -1,0 +1,13 @@
+<div class="question" *ngFor="let question of questionsList">
+        
+    <h2>{{ question }}</h2>
+    <button (click)="recordAnswer(question)">Record Answer</button>
+    <audio [src]="recordings[question]" controls type="audio/mpeg"></audio>
+    <p *ngIf="recording[question]">Recording...</p>
+  </div>
+  
+  <div class="submit-container">
+    <button class="submit-button" type="submit" (click)="submitAnswers()">Submit Answers</button>
+  </div>
+
+

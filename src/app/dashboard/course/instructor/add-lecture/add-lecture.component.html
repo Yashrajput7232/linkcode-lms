@@ -1,0 +1,27 @@
+<div class="lecture-form">
+  <h2>Add new Lecture</h2>
+  <form [formGroup]="lectureForm" (ngSubmit)="addLecture()">
+
+    <div class="form-group">
+      <label>Title</label>
+      <input type="text" placeholder="Lecture title" formControlName="title" class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && formControls['title'].errors }" />
+      <div *ngIf="submitted && formControls['title'].errors" class="invalid-feedback">
+        <div *ngIf="formControls['title'].errors['required']">Title is required</div>
+      </div>
+    </div>
+
+    <div class="form-goup">
+      <label>Video </label>
+      <input type="file" class="form-control" formControlName="video"
+        [ngClass]="{ 'is-invalid': submitted && formControls['video'].errors }">
+      <div *ngIf="submitted && formControls['video'].errors" class="invalid-feedback">
+        <div *ngIf="formControls['video'].errors['required']">Video is required</div>
+      </div>
+    </div>
+    <div class="form-group text-center">
+      <button type="submit" class="btn btn-primary">Add</button>
+    </div>
+  </form>
+
+</div>

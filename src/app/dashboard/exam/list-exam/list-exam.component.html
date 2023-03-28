@@ -1,0 +1,25 @@
+<div class="text-center ">
+  <button *ngIf=!setvalue [routerLink]="'./add'" class="btn btn-primary btn-lg mt-3">
+    Add New Exam
+  </button><br><br>
+
+  <div class="card mt-5 mb-5 " *ngFor="let exam of exams"  >
+    <div class="card-header main" style="text-align: left;">
+      <div class="card-title" ><b>Course Name&nbsp; :</b> {{exam?.['course']?.['category']}}</div>
+      <div class="card-title" ><b>Topic Name&nbsp;&nbsp;&nbsp; :</b> {{exam?.['name']}}</div>
+      <div class="card-subtitle"><b>Exam Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :</b> {{exam?.['type']}}</div>
+      <div class="card-subtitle" style="margin-left: 500px;" ><b>Start Date :</b> {{exam?.['startDate']}}</div>
+    </div>
+    <div  class=" text-center mt-3">
+
+      <div style="text-align: left;" *ngIf="getRole()=='STUDENT'" (click)="attemptexam(exam)">Total Question:</div>
+
+     <button *ngIf="getRole()=='INSTRUCTOR'" (click)="examDetails(exam)"class="btn btn-primary ml-3">Add Question</button>
+     <button *ngIf="getRole()=='STUDENT'&&exam?.['type']=='MCQ'"  (click)="attemptexam(exam)"class="btn btn-primary ml-3">Attempt Exam</button>
+     <button *ngIf="getRole()=='STUDENT'&&exam?.['type']=='CODING'"  (click)="attemptCODINGexam(exam)"class="btn btn-primary ml-3">Attempt Exam</button>
+     <button *ngIf="getRole()=='STUDENT'&&exam?.['type']=='VERBAL'"  (click)="attemptVERBALexam(exam)"class="btn btn-primary ml-3">Attempt Exam</button>
+    </div>
+    <br>
+  </div>
+
+  <router-outlet></router-outlet>

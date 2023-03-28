@@ -1,0 +1,15 @@
+<div id="mySidenav" class="sidenav">
+
+  <a  [routerLink]="['exam']">Exam Portal</a>
+  <a [routerLink]="['course']" >Courses Portal</a>
+  <a *ngIf="getRole()=='ADMIN' || getRole()=='SUPERADMIN'" [routerLink]="['user']" >View All Users</a>
+  <a *ngIf="getRole()=='ADMIN' || getRole()=='SUPERADMIN'" [routerLink]="['user/add']" >Add user</a>
+  <a *ngIf="getRole()=='INSTRUCTOR'" [routerLink]="['course']" >View All Courses</a>
+  <a *ngIf="getRole()=='INSTRUCTOR'" [routerLink]="['course/add']" >Add Course</a>
+  <a *ngIf="getRole()=='STUDENT'" [routerLink]="['course/my-learning']" >My courses</a>
+  <a *ngIf="getRole()=='STUDENT'" [routerLink]="['course/cart']" >Cart</a>
+  <a [routerLink]="['profile']" >Profile</a>
+  <a *ngIf="isLoggedIn()" (click)="logout()" [routerLink]="['../login']">Logout</a>
+</div>
+
+

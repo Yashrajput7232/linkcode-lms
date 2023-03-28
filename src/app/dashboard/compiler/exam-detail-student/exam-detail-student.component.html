@@ -1,0 +1,11 @@
+<div class="card border border-dark mt-3" *ngFor="let exam of examdetail"  >
+  <div class="card-header">
+    <div class="text-right">Marks : {{exam?.['marks']}}</div>
+    <div class="card-title">question  : {{exam?.['question']}}</div>
+    <div class="card-subtitle">Description : {{exam?.['description']}}</div>
+
+    <div class="text-center">
+      <button class="btn btn-primary" (click)="gotoattemptexam(exam?.['_id'])">Attempt Exam</button>
+    </div>
+  </div>
+</div>

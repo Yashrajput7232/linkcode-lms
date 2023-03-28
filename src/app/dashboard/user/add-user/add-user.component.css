@@ -1,0 +1,19 @@
+.user-form{
+  width:400px;
+  align-items: center;
+  border: medium solid rgba(214, 211, 211, 0.196);
+  padding:20px;
+  margin:auto;
+  background-color:rgba(223, 215, 215, 0.771) ;
+
+
+}
+
+.form-group{
+  font-size: 30pxvw;
+}
+
+h2{
+  text-align: center;
+  margin-bottom: 20px;
+}

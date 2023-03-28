@@ -1,0 +1,527 @@
+<!-- Header -->
+<!-- style="box-shadow: 0 4px 4px -2px rgba(0,0,0,.2);" -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
+  <div class="container-fluid">
+    <a class="navbar-brand navbar-logo" href="#"> <img style="max-width: 100%;" width="300px"
+        src="../../../assets/Logo.png" alt=""></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav .justify-content-center mb-2 mb-lg-0">
+        <li class="nav-item m-3">
+          <a class="nav-link active" routerLink="/dashboard">HOME</a>
+        </li>
+        <li class="nav-item m-3">
+          <a class="nav-link active" routerLink="/dashboard">ABOUT US</a>
+        </li>
+        <li class="nav-item m-3">
+          <a class="nav-link active" routerLink="/dashboard/course">COURSES</a>
+        </li>
+        <li class="nav-item m-3">
+          <a class="nav-link active" routerLink="/dashboard/exam">TEST</a>
+        </li>
+        <li class="nav-item m-3">
+          <a class="nav-link active" href="#">COMPILER</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item m-3">
+          <a class="nav-link active" href="#"><i class="fa-solid fa-cart-shopping fa-2x"></i></a>
+        </li>
+        <li class="nav-item m-2">
+          <a *ngIf="!isLoggedIn()" class="nav-link active" routerLink="/login"> <button type="button"
+              class="btn btn-outline-dark"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</button> </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<!--  -->
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <img src="/circle animation.png" alt="" style="width: 100%;">
+    </div>
+    <div class="col-sm">
+      <div class="h-100 d-flex flex-column justify-content-center">
+        <h2 class="text-left"> <b> Explore Our Courses </b></h2>
+        <p class="text-left">Our courses focus exclusively on in-demand digital technology and insure workplace
+          relevance</p>
+        <a class="text-left" href="">explore</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Student are viewwing courses -->
+
+<section>
+  <h2 class="text-center h1-color">Students are viewing</h2>
+  <div class="container py-5">
+    <div class="row">
+
+      <div class="col-md-12 col-lg-3 mb-4 mb-lg-0">
+        <div class="card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7HF0t45c7E_FTP3sEz8IrmmgZS5UgwMtK2g&usqp=CAU"
+            class="card-img-top" alt="Laptop" />
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <h5>Java Full Stack Developement</h5>
+            </div>
+            <div class="d-flex">
+              <p>2 eBooks</p>
+            </div>
+            <div class="d-flex justify-content-between mb-3">
+              <h5 class="text-dark mb-0"><b>$999</b></h5>
+              <p class="small text-danger"><s>$1199</s></p>
+              <p class="small p-1" style="background-color:gray;">50 % off</p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <button type="button" class="btn btn-outline-primary"><i class="fa-solid fa-check"></i> Add to
+                cart</button>
+              <button type="button" class="btn btn-outline-primary"><i class="fa-solid fa-cart-shopping"></i> Buy
+                Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-md-12 col-lg-3 mb-4 mb-lg-0">
+        <div class="card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7HF0t45c7E_FTP3sEz8IrmmgZS5UgwMtK2g&usqp=CAU"
+            class="card-img-top" alt="Laptop" />
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <h5>Java Full Stack Developement</h5>
+            </div>
+            <div class="d-flex">
+              <p>2 eBooks</p>
+            </div>
+            <div class="d-flex justify-content-between mb-3">
+              <h5 class="text-dark mb-0"><b>$999</b></h5>
+              <p class="small text-danger"><s>$1199</s></p>
+              <p class="small p-1" style="background-color:gray;">50 % off</p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <button type="button" class="btn btn-outline-primary"><i class="fa-solid fa-check"></i> Add to
+                cart</button>
+              <button type="button" class="btn btn-outline-primary"><i class="fa-solid fa-cart-shopping"></i> Buy
+                Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-md-12 col-lg-3 mb-4 mb-lg-0">
+        <div class="card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7HF0t45c7E_FTP3sEz8IrmmgZS5UgwMtK2g&usqp=CAU"
+            class="card-img-top" alt="Laptop" />
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <h5>Java Full Stack Developement</h5>
+            </div>
+            <div class="d-flex">
+              <p>2 eBooks</p>
+            </div>
+            <div class="d-flex justify-content-between mb-3">
+              <h5 class="text-dark mb-0"><b>$999</b></h5>
+              <p class="small text-danger"><s>$1199</s></p>
+              <p class="small p-1" style="background-color:gray;">50 % off</p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <button type="button" class="btn btn-outline-primary"><i class="fa-solid fa-check"></i> Add to
+                cart</button>
+              <button type="button" class="btn btn-outline-primary"><i class="fa-solid fa-cart-shopping"></i> Buy
+                Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-12 col-lg-3 mb-4 mb-lg-0">
+        <div class="card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7HF0t45c7E_FTP3sEz8IrmmgZS5UgwMtK2g&usqp=CAU"
+            class="card-img-top" alt="Laptop" />
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <h5>Java Full Stack Developement</h5>
+            </div>
+            <div class="d-flex">
+              <p>2 eBooks</p>
+            </div>
+            <div class="d-flex justify-content-between mb-3">
+              <h5 class="text-dark mb-0"><b>$999</b></h5>
+              <p class="small text-danger"><s>$1199</s></p>
+              <p class="small p-1" style="background-color:gray;">50 % off</p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <button type="button" class="btn btn-outline-primary"><i class="fa-solid fa-check"></i> Add to
+                cart</button>
+              <button type="button" class="btn btn-outline-primary"><i class="fa-solid fa-cart-shopping"></i> Buy
+                Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Test Series -->
+
+<!-- Student are viewwing courses -->
+
+<section class="tests">
+  <h2 class="text-center h1-color">Test Series</h2>
+  <div class="container">
+    <div class="slider-wrap">
+      <div class="slider-main">
+        <div class="item">
+          <div class="card">
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                <h5>Java Full Stack Developement</h5>
+              </div>
+              <div class="d-flex">
+                <p>2 eBooks</p>
+              </div>
+              <div class="d-flex justify-content-between mb-3">
+                <h5 class="text-dark mb-0"><b>$999</b></h5>
+                <p class="small text-danger"><s>$1199</s></p>
+                <p class="small p-1" style="background-color:gray;">50 % off</p>
+              </div>
+              <div class="d-flex justify-content-between">
+                <button type="button" class="btn btn-outline-primary"><i class="fa-solid fa-check"></i> Add to
+                  cart</button>
+                <button type="button" class="btn btn-outline-primary"><i class="fa-solid fa-cart-shopping"></i> Buy
+                  Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="card">
+            <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7HF0t45c7E_FTP3sEz8IrmmgZS5UgwMtK2g&usqp=CAU"
+              class="card-img-top" alt="Laptop" /> -->
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                <h5>Y Stack Developement</h5>
+              </div>
+              <div class="d-flex">
+                <p>2 eBooks</p>
+              </div>
+              <div class="d-flex justify-content-between mb-3">
+                <h5 class="text-dark mb-0"><b>$999</b></h5>
+                <p class="small text-danger"><s>$1199</s></p>
+                <p class="small p-1" style="background-color:gray;">50 % off</p>
+              </div>
+              <div class="d-flex justify-content-between">
+                <button type="button" class="btn btn-outline-primary"><i class="fa-solid fa-check"></i> Add to
+                  cart</button>
+                <button type="button" class="btn btn-outline-primary"><i class="fa-solid fa-cart-shopping"></i> Buy
+                  Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="card">
+            <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7HF0t45c7E_FTP3sEz8IrmmgZS5UgwMtK2g&usqp=CAU"
+              class="card-img-top" alt="Laptop" /> -->
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                <h5>X Developement</h5>
+              </div>
+              <div class="d-flex">
+                <p>2 eBooks</p>
+              </div>
+              <div class="d-flex justify-content-between mb-3">
+                <h5 class="text-dark mb-0"><b>$999</b></h5>
+                <p class="small text-danger"><s>$1199</s></p>
+                <p class="small p-1" style="background-color:gray;">50 % off</p>
+              </div>
+              <div class="d-flex justify-content-between">
+                <button type="button" class="btn btn-outline-primary"><i class="fa-solid fa-check"></i> Add to
+                  cart</button>
+                <button type="button" class="btn btn-outline-primary"><i class="fa-solid fa-cart-shopping"></i> Buy
+                  Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="card">
+            <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7HF0t45c7E_FTP3sEz8IrmmgZS5UgwMtK2g&usqp=CAU"
+              class="card-img-top" alt="Laptop" /> -->
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                <h5>Java Full Stack Developement</h5>
+              </div>
+              <div class="d-flex">
+                <p>2 eBooks</p>
+              </div>
+              <div class="d-flex justify-content-between mb-3">
+                <h5 class="text-dark mb-0"><b>$999</b></h5>
+                <p class="small text-danger"><s>$1199</s></p>
+                <p class="small p-1" style="background-color:gray;">50 % off</p>
+              </div>
+              <div class="d-flex justify-content-between">
+                <button type="button" class="btn btn-outline-primary"><i class="fa-solid fa-check"></i> Add to
+                  cart</button>
+                <button type="button" class="btn btn-outline-primary"><i class="fa-solid fa-cart-shopping"></i> Buy
+                  Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="card">
+            <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7HF0t45c7E_FTP3sEz8IrmmgZS5UgwMtK2g&usqp=CAU"
+              class="card-img-top" alt="Laptop" /> -->
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                <h5>Python Full Stack Developement</h5>
+              </div>
+              <div class="d-flex">
+                <p>2 eBooks</p>
+              </div>
+              <div class="d-flex justify-content-between mb-3">
+                <h5 class="text-dark mb-0"><b>$999</b></h5>
+                <p class="small text-danger"><s>$1199</s></p>
+                <p class="small p-1" style="background-color:gray;">50 % off</p>
+              </div>
+              <div class="d-flex justify-content-between">
+                <button type="button" class="btn btn-outline-primary"><i class="fa-solid fa-check"></i> Add to
+                  cart</button>
+                <button type="button" class="btn btn-outline-primary"><i class="fa-solid fa-cart-shopping"></i> Buy
+                  Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="button-area">
+        <button type="button" class="prev" appPrev>Prev</button>
+        <button type="button" class="next" appNext>Next</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills -->
+
+<section class="container justify-content-center">
+  <h2 class="text-center h1-color">Skills</h2>
+  <div class="row p-5 justify-content-center">
+    <div class="col-xl-2">
+      <img class="card-img" src="/accenture.png" alt="Suresh Dasari Card">
+    </div>
+    <div class="col">
+      <img class="card-img" src="../../../assets/crave.png" alt="Suresh Dasari Card">
+    </div>
+    <div class="col">
+      <img class="card-img" src="../../../assets/tcs.png" alt="Suresh Dasari Card">
+    </div>
+    <div class="col">
+      <img class="card-img" src="../../../assets/micro.png" alt="Suresh Dasari Card">
+    </div>
+    <div class="col">
+      <img class="card-img" src="../../../assets/ama.png" alt="Suresh Dasari Card">
+    </div>
+    <div class="col">
+      <img class="card-img" src="../../../assets/tcs.png" alt="Suresh Dasari Card">
+    </div>
+  </div>
+  <div class="row p-5 justify-content-center">
+    <div class="col-md-2 col-xs-1">
+      <img class="card-img" src="../../../assets/crave.png" alt="Suresh Dasari Card">
+    </div>
+    <div class="col-md-2 col-xs-1">
+      <img class="card-img" src="../../../assets/tcs.png" alt="Suresh Dasari Card">
+    </div>
+    <div class="col-md-2 col-xs-1">
+      <img class="card-img" src="../../../assets/micro.png" alt="Suresh Dasari Card">
+    </div>
+    <div class="col-md-2 col-xs-1">
+      <img class="card-img" src="../../../assets/ama.png" alt="Suresh Dasari Card">
+    </div>
+    <div class="col-md-2 col-xs-1">
+      <img class="card-img" src="../../../assets/tcs.png" alt="Suresh Dasari Card">
+    </div>
+  </div>
+  <div class="row p-5 justify-content-center">
+    <div class="col-md-2 col-sm-1">
+      <img class="card-img" src="../../../assets/tcs.png" alt="Suresh Dasari Card">
+    </div>
+    <div class="col-md-2 col-sm-1">
+      <img class="card-img" src="../../../assets/micro.png" alt="Suresh Dasari Card">
+    </div>
+    <div class="col-md-2 col-sm-1">
+      <img class="card-img" src="../../../assets/ama.png" alt="Suresh Dasari Card">
+    </div>
+    <div class="col-md-2 col-sm-1">
+      <img class="card-img" src="../../../assets/tcs.png" alt="Suresh Dasari Card">
+    </div>
+  </div>
+  <div class="row p-5 justify-content-center">
+    <div class="col-xl-2">
+      <img class="card-img" src="../../../assets/ama.png" alt="Suresh Dasari Card">
+    </div>
+    <div class="col-xl-2">
+      <img class="card-img" src="../../../assets/tcs.png" alt="Suresh Dasari Card">
+    </div>
+  </div>
+  <div class="row p-5 justify-content-center">
+    <div class="col-xl-2">
+      <img class="card-img" src="../../../assets/tcs.png" alt="Suresh Dasari Card">
+    </div>
+  </div>
+</section>
+
+<!-- Students placed in a company -->
+<section class="container justify-content-center">
+  <h2 class="text-center h1-color">Students placed in a company</h2>
+  <div class="card" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+    <div class="row p-5">
+      <div class="col">
+        <img class="card-img" src="../../../assets/accenture.png" alt="Suresh Dasari Card">
+      </div>
+      <div class="col">
+        <img class="card-img" src="../../../assets/crave.png" alt="Suresh Dasari Card">
+      </div>
+      <div class="col">
+        <img class="card-img" src="../../../assets/tcs.png" alt="Suresh Dasari Card">
+      </div>
+      <div class="col">
+        <img class="card-img" src="../../../assets/micro.png" alt="Suresh Dasari Card">
+      </div>
+      <div class="col">
+        <img class="card-img" src="../../../assets/ama.png" alt="Suresh Dasari Card">
+      </div>
+      <div class="col">
+        <img class="card-img" src="../../../assets/tcs.png" alt="Suresh Dasari Card">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- footer -->
+
+
+<!-- Footer -->
+<footer class="page-footer font-small blue pt-4">
+  <section style="background-color: #1a1926;">
+    <!-- Footer Links -->
+    <div class="container-fluid text-center text-md-left p-lg-5">
+
+      <!-- Grid row -->
+      <div class="row">
+
+        <!-- Grid column -->
+        <div class="col-md-4 mt-md-0 mt-3">
+
+          <!-- Content -->
+          <h2>Linkcode</h2>
+          <h2>Technologies</h2>
+          <p>Available on</p>
+        </div>
+        <!-- Grid column -->
+
+        <hr class="clearfix w-100 d-md-none pb-3">
+
+        <!-- Grid column -->
+        <div class="col-md-2 mb-md-0 mb-3">
+
+          <!-- Links -->
+          <h5>Courses</h5>
+
+          <ul class="list-unstyled">
+            <li>
+              <a href="#!">Explore</a>
+            </li>
+            <li>
+              <a href="#!">Internship</a>
+            </li>
+            <li>
+              <a href="#!">Success stories</a>
+            </li>
+          </ul>
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 mb-md-0 mb-3">
+
+          <!-- Links -->
+          <h5>Company</h5>
+
+          <ul class="list-unstyled">
+            <li>
+              <a href="#!">Pricing</a>
+            </li>
+            <li>
+              <a href="#!">Linkcode app</a>
+            </li>
+          </ul>
+
+        </div>
+        <!-- Grid column -->
+        <div class="col-md-2 mb-md-0 mb-3">
+
+          <!-- Links -->
+          <h6>Help & Support</h6>
+
+          <ul class="list-unstyled">
+            <li>
+              <a href="#!">Help center</a>
+            </li>
+            <li>
+              <a href="#!">community</a>
+            </li>
+          </ul>
+
+        </div>
+
+        <div class="col-md-2 mb-md-0 mb-3">
+
+          <!-- Links -->
+          <h6>Contact Us</h6>
+
+          <ul class="list-unstyled">
+            <li>
+              <a href="#!"><i class="fa-solid fa-phone"></i> +91 9604430489</a>
+            </li>
+            <li>
+              <a href="#!"><i class="fa-solid fa-envelope"></i> info@linkcode.in</a>
+            </li>
+            <br>
+            <li>
+              <p>Follow us on</p>
+            </li>
+            <li>
+              <a href="#!"><i class="fa-brands fa-instagram"></i> &nbsp;<i class="fa-brands fa-twitter"></i>&nbsp; <i
+                  class="fa-brands fa-facebook"></i></a>
+            </li>
+          </ul>
+
+        </div>
+
+      </div>
+      <!-- Grid row -->
+
+    </div>
+
+  </section>
+</footer>
+<!-- Footer -->

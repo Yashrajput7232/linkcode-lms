@@ -1,0 +1,58 @@
+<h2>Add new User</h2>
+<div class="user-form">
+  <form [formGroup]="form" (ngSubmit)="addUser()">
+
+    <div class="form-group responsive-font-example">
+      <label>First Name</label>
+      <input type="text" formControlName="firstName" class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && formControls['firstName'].errors }" />
+      <div *ngIf="submitted && formControls['firstName'].errors" class="invalid-feedback">
+        <div *ngIf="formControls['firstName'].errors['required']">First Name is required</div>
+      </div>
+
+    </div>
+
+    <div class="form-group responsive-font-example">
+      <label>Last Name</label>
+      <input type="text" formControlName="lastName" class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && formControls['lastName'].errors }" />
+      <div *ngIf="submitted && formControls['lastName'].errors" class="invalid-feedback">
+        <div *ngIf="formControls['lastName'].errors['required']">Last Name is required</div>
+      </div>
+
+    </div>
+
+    <div class="form-group responsive-font-example">
+      <label>Email</label>
+      <input type="text" formControlName="email" class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && formControls['email'].errors }" />
+      <div *ngIf="submitted && formControls['email'].errors" class="invalid-feedback">
+        <div *ngIf="formControls['email'].errors['required']">Email is required</div>
+        <div *ngIf="formControls['email'].errors['email']">Email is invalid</div>
+      </div>
+
+    </div>
+
+    <div class="form-group responsive-font-example">
+      <label>Role</label>
+
+      <select formControlName="role" class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && formControls['role'].errors }">
+        <option value="">Select Role</option>
+        <option *ngIf="getRole()=='SUPERADMIN'">ADMIN</option>
+        <option>INSTRUCTOR</option>
+      </select>
+
+      <div *ngIf="submitted && formControls['role'].errors" class="invalid-feedback">
+        <div *ngIf="formControls['role'].errors['required']">Role is required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">Add user</button>
+    </div>
+
+     
+  </form>
+
+</div>

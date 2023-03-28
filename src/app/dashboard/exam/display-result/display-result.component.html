@@ -1,0 +1,40 @@
+<div   *ngIf=" getFinalMarks()>75"  class="card text-white my-card">
+  <div class="card-body">
+    <br>
+    <h1 class="card-title"><h3>Execellent...</h3> Congratualation</h1><br>
+    <h4 class="card-title">Your score in <b><i> Data Stucture</i></b></h4>
+    <br>
+    <h4 class="card-text ">Percentage : {{getFinalMarks()}}%</h4>
+    <h4 class="card-text ">Obtained Marks: {{obtainedMarks}}</h4>
+    <h4 class="card-text ">Total Marks : {{totalMarks}}</h4>
+    
+  </div>
+</div>
+
+
+<div *ngIf=" getFinalMarks()<40"  class="card text-white my-card">
+  <div class="card-body">
+    <br>
+    <h1 class="card-title"><h3>Awesome..</h3> Congratualation</h1><br>
+    <h4 class="card-title">Your score in <b><i> Data Stucture</i></b></h4>
+    <br>
+    <h4 class="card-text ">Percentage : {{getFinalMarks()}}%</h4>
+    <h4 class="card-text ">Obtained Marks: {{obtainedMarks}}</h4>
+    <h4 class="card-text ">Total Marks : {{totalMarks}}</h4>
+    
+    </div>
+</div>
+
+<div *ngIf=" getFinalMarks()<75 &&  getFinalMarks()>40"  class="card text-white my-card">
+  <div class="card-body">
+    <br>
+    <h3 class="card-title">Good...  Congrats</h3>   <br>
+    <h4 class="card-title">Your score in <b><i> Data Stucture</i></b></h4>
+    <br>
+  
+      <h4 class="card-text ">Percentage : {{getFinalMarks()}}%</h4>
+      <h4 class="card-text ">Obtained Marks: {{obtainedMarks}}</h4>
+      <h4 class="card-text ">Total Marks : {{totalMarks}}</h4>
+    
+  </div>
+</div>

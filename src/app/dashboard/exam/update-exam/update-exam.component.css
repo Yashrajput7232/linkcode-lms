@@ -1,0 +1,30 @@
+p {
+    font-family: Lato;
+  }
+
+  .custom-input {
+    height: 30px;
+    width: 300px;
+    font-size: 16px;
+    ;
+  }
+
+  .exam-form{
+    border: medium solid rgba(214, 211, 211, 0.196);
+   
+  }
+
+.main{
+  background-color: #4169E1;
+  color: white;
+  font-weight: bold;
+}
+.answers{
+  padding-top: 2px;
+  
+}
+.options{
+  background-color: #87CEEB;
+  color:  black;
+  font-weight: bold;
+}
